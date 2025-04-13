@@ -38,6 +38,13 @@ testpaths = ["tests"]
 [tool.flake8]
 max-line-length = 120
 extend-ignore = "E203" # Ignore specific flake8 errors if needed (E203 often conflicts with black)
+exclude = [
+    ".git",
+    "__pycache__",
+    ".venv",
+    "build",
+    "dist"
+]
 
 [tool.black]
 line-length = 120

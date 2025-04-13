@@ -69,7 +69,7 @@ jobs:
       - name: Scan for Vulnerabilities in Built Package (Best Practice)
         # Uses pip-audit against the requirements extracted from the built wheel
         run: |
-          pip-audit --requirement dist/*.whl
+          pip-audit
 
       # - name: Publish
       #   id: publish

@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.0.2 (2025-04-13)
+
+### Bug Fixes
+
+- Test
+  ([`5dbfe1f`](https://github.com/cormac-rynne/package_example/commit/5dbfe1f1778d52fc52b8d56c5ac7630447d0bad7))
+
+
 ## v0.0.1 (2025-04-13)
 
 ### Bug Fixes
@@ -15,6 +23,9 @@
   ([`1da0caa`](https://github.com/cormac-rynne/package_example/commit/1da0caa2e61ef68226d3e5afdcf508b5db5266ed))
 
 ### Build System
+
+- Fix publish
+  ([`83fca5a`](https://github.com/cormac-rynne/package_example/commit/83fca5ab613341df6de4f3fdec574c225df9e616))
 
 - Fix publish
   ([`85b2004`](https://github.com/cormac-rynne/package_example/commit/85b20045c67dafdc8cef2e32ea0af44680192eda))

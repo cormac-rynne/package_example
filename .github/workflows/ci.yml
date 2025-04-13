@@ -33,7 +33,7 @@ jobs:
 
       - name: Check formatting with black
         run: |
-          black --check src tests
+          black --check .
 
       - name: Test with pytest
         run: |

@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v1.0.0 (2025-04-13)
+
+### Features
+
+- Remove deprecated user profile endpoint
+  ([`ec38dbf`](https://github.com/cormac-rynne/package_example/commit/ec38dbfd8426b18ae6e861f3f6689e2e90a6b7f5))
+
+
 ## v0.0.2 (2025-04-13)
 
 ### Bug Fixes

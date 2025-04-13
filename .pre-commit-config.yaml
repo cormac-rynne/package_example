@@ -1,0 +1,64 @@
+# .pre-commit-config.yaml
+
+# Optional: Set minimum pre-commit version
+# min_pre_commit_version: '2.9.0'
+
+repos:
+  # Standard hooks provided by pre-commit maintainers
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0 # Use the latest stable tag
+    hooks:
+      - id: check-yaml # Check YAML files for parseable syntax.
+      - id: check-json # Check JSON files for parseable syntax.
+      - id: check-toml # Check TOML files for parseable syntax.
+      - id: end-of-file-fixer # Ensures files end with a newline.
+      - id: trailing-whitespace # Trims trailing whitespace.
+      - id: check-added-large-files # Prevents committing large files (>5MB by default).
+      - id: detect-private-key # Prevents committing private keys.
+
+  # Python code formatting using Black
+  - repo: https://github.com/psf/black
+    rev: 25.1.0 # Use the latest stable tag or match your project's version
+    hooks:
+      - id: black
+        # Optional: Specify language version if needed, default is usually fine
+        # language_version: python3.10
+        # Optional: Add args if they differ from pyproject.toml (usually not needed)
+        # args: ["--line-length=88"]
+
+  # Python import sorting using isort
+  - repo: https://github.com/pycqa/isort
+    rev: 6.0.1 # Use the latest stable tag
+    hooks:
+      - id: isort
+        name: isort (python)
+        # args: ["--profile", "black"] # Ensures compatibility with black
+
+  # Python linting using Flake8
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.2.0 # Use the latest stable tag
+    hooks:
+      - id: flake8
+        # Optional: Add args if they differ from pyproject.toml/setup.cfg
+        # args: ["--max-line-length=88", "--extend-ignore=E203"]
+        # Optional: Install additional flake8 plugins if you use them
+        # additional_dependencies: ["flake8-bugbear"]
+
+  # Optional: Python type checking using MyPy (if you use type hints)
+  # - repo: https://github.com/pre-commit/mirrors-mypy
+  #   rev: 'v1.10.0' # Use the latest stable tag
+  #   hooks:
+  #     - id: mypy
+  #       # args: [--strict] # Add your mypy args here
+  #       # You might need to specify files or exclude directories
+  #       # files: ^src/
+  #       # exclude: ^tests/
+  #       # Ensure mypy dependencies are installed in the hook's environment
+  #       # additional_dependencies: [types-requests, ...]
+
+  # Optional: Automatically upgrade syntax for newer Python versions
+  # - repo: https://github.com/asottile/pyupgrade
+  #   rev: v3.15.2 # Use the latest stable tag
+  #   hooks:
+  #     - id: pyupgrade
+  #       args: ["--py38-plus"] # Specify your minimum supported Python version

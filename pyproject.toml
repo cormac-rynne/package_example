@@ -1,0 +1,76 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"] # Specify build tool requirements
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "package_practice"
+version = "0.1.0"
+description = "A short description of your package."
+readme = "README.md"
+authors = [
+    { name="Your Name", email="your.email@example.com" },
+]
+license = { file="LICENSE" } # Optional: Add a LICENSE file
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License", # Choose your license
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8" # Specify compatible Python versions
+dependencies = [
+    # List your runtime dependencies here, e.g.:
+    # "requests>=2.20.0",
+]
+
+[project.urls] # Optional: Links for PyPI
+Homepage = "https://github.com/your-username/your-repo-name"
+Repository = "https://github.com/your-username/your-repo-name"
+"Bug Tracker" = "https://github.com/your-username/your-repo-name/issues"
+
+# --- Tool Configurations ---
+
+[tool.pytest.ini_options]
+pythonpath = ["example"] # Tell pytest where to find your source code
+testpaths = ["tests"]
+
+[tool.flake8]
+max-line-length = 120
+extend-ignore = "E203" # Ignore specific flake8 errors if needed (E203 often conflicts with black)
+
+[tool.black]
+line-length = 120
+
+# --- Semantic Release Configuration ---
+[tool.semantic_release]
+version_variable = "example/__init__.py:__version__" # Path to your version definition
+# Or if using pyproject.toml directly (requires semantic-release >= 8.0):
+version_toml = "pyproject.toml:project.version"
+branch = "main" # The branch to release from
+repository = "github" # Or "gitlab"
+upload_to_pypi = true # Enable PyPI uploads
+upload_to_release = true # Create GitHub releases
+build_command = "pip install build && python -m build" # Command to build sdist and wheel
+commit_subject = "chore(release): :bookmark: {version}" # Customize the release commit message
+changelog_file = "CHANGELOG.md" # File to store the changelog
+hvcs = "github" # Host Version Control System
+
+# Optional: Define assets to upload to the GitHub Release
+# [tool.semantic_release.assets]
+# paths = ["dist/*"] # Upload built distributions
+
+# --- Development Dependencies (for linting, testing, building, releasing) ---
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "flake8>=5.0",
+    "black>=22.0",
+    "python-semantic-release>=8.0", # Use a recent version
+    "build>=0.10",
+    "twine>=4.0",
+    "wheel", # Often needed by build
+    "setuptools", # Often needed by build
+    "pip-audit", # From previous best practices step
+    "pre-commit>=3.0", # Add pre-commit
+]

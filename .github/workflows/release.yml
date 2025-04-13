@@ -50,7 +50,7 @@ jobs:
 
       - name: Determine Version and Create GitHub Release (Actual)
         id: create_release
-        run: semantic-release version --commit --tag --changelog --gh-release
+        run: semantic-release version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # No PyPI token needed here, as semantic-release isn't uploading to PyPI in this step

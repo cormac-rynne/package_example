@@ -43,7 +43,7 @@ jobs:
         # Optionally run in dry mode first to see what *would* happen
         id: dry_run_release
         if: true
-        run: semantic-release version --print --dry-run
+        run: semantic-release version --print
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # No PyPI token needed here, just interacting with GitHub

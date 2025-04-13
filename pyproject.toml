@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "package_practice"
-version = "0.1.0"
+version = "0.0.1"
 description = "A short description of your package."
 readme = "README.md"
 authors = [
@@ -51,14 +51,14 @@ line-length = 120
 
 # --- Semantic Release Configuration ---
 [tool.semantic_release]
-version_variable = "example/__init__.py:__version__" # Path to your version definition
+version_variables = ["example/__init__.py:__version__"] # Path to your version definition
 # Or if using pyproject.toml directly (requires semantic-release >= 8.0):
-version_toml = "pyproject.toml:project.version"
+version_toml = ["pyproject.toml:project.version"]
 branch = "main" # The branch to release from
 repository = "github" # Or "gitlab"
-upload_to_pypi = true # Enable PyPI uploads
+# upload_to_pypi = true # Enable PyPI uploads
 upload_to_release = true # Create GitHub releases
-build_command = "pip install build && python -m build" # Command to build sdist and wheel
+# build_command = "pip install build && python -m build" # Command to build sdist and wheel
 commit_subject = "chore(release): :bookmark: {version}" # Customize the release commit message
 changelog_file = "CHANGELOG.md" # File to store the changelog
 hvcs = "github" # Host Version Control System
